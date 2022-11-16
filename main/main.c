@@ -12,6 +12,9 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "sdkconfig.h"
+#include "esp_private/usb_phy.h"
+#include "soc/usb_pins.h"
+#include "tusb_audio.h"
 
 static const char *TAG = "USB audio example";
 
