@@ -22,6 +22,8 @@
 static const char *TAG = "USB audio example";
 
 uint16_t audio_buffer[SAMPLES_BYTES_NUM];
+
+//! Add more channels
 sig_gen_t sine_ch1;
 sig_gen_t sine_ch2;
 
