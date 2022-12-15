@@ -94,6 +94,22 @@ uint8_t * get_next_read_buffer(sample_buffers *sb){
 }
 
 
+    // if(sb->next_read_index == 0){
+    //     sb->next_read_index++;
+    //     return sb->buffer0;
+    // }
+    // if(sb->next_read_index == 1){
+    //     sb->next_read_index++;
+    //     return sb->buffer1;
+    // }
+    // if(sb->next_read_index == 2){
+    //     sb->next_read_index = 0;
+    //     return sb->buffer2;
+    // }
+    // return 0;
+    
+
+
 
 uint8_t * get_next_write_buffer(sample_buffers *sb,bool increment){
 
@@ -168,6 +184,9 @@ static void i2s_example_read_task(void *args)
 
 
 
+
+
+
 static void i2s_example_init_std_duplex(void)
 {
     /* Setp 1: Determine the I2S channel configuration and allocate both channels
@@ -203,6 +222,8 @@ static void i2s_example_init_std_duplex(void)
 }
 
 
+
+
 void tinyusb_audio_tx_callback(uint8_t *buffer, uint16_t *bytes)
 
 {   
@@ -222,8 +243,8 @@ void tinyusb_audio_tx_callback(uint8_t *buffer, uint16_t *bytes)
     for (int samples_num = 0; samples_num < 48; samples_num+=1)
     {
         //gpio_set_level(GPIO_NUM_17, 1);
-        *p_buff++ = *(pointer16+((samples_num*2)+1));
-        *p_buff++ = *(pointer16+samples_num);//ch2_samples[samples_num];
+        *p_buff++ = *(pointer16+((samples_num*4)+1));
+        *p_buff++ = *(pointer16+((samples_num*4)+3));//ch2_samples[samples_num];
         //gpio_set_level(GPIO_NUM_17, 0);
     }
     gpio_set_level(GPIO_NUM_14, 1);
