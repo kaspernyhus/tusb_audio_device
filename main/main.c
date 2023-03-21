@@ -17,7 +17,6 @@
 
 #include "tinyusb.h"
 #include "tusb_audio.h"
-#include "tusb_net.h"
 
 #include "esp_signal_generator.h"
 
@@ -34,10 +33,6 @@ void app_main(void)
     esp_sig_gen_config_t sig_gen_cfg = {}; // default configuration
     esp_sig_gen_init(&sig_gen, &sig_gen_cfg);
     tusb_audio_init();
-#endif
-
-#if CONFIG_ESP_TINYUSB_NET_ENABLED
-    tusb_net_init();
 #endif
 
     ESP_LOGI(TAG, "USB initialization");

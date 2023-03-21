@@ -2,10 +2,13 @@
 | ----------------- | -------- |
 
 # TinyUSB Audio Device example
+Change audio configuration in `menuconfig` ---> `Component config` ---> `ESP TinyUSB Audio` ---> `Audio Device Class (UAC2)`
 
-Using a signal generator to output 1/2/4 sine waves over USB Audio to host (USB Microphone)
+> NOTE:
+> For Audio functionality `Use Synopsis dwc2 driver` has to be selected
 
-Change number of audio channels in `menuconfig` ---> `Component config` ---> `ESP TinyUSB Audio`
 
-(NOTE: Only supports 48kHz/16bit audio)
-
+## Supports:
+- 48kHz sample rate
+- 16bit/24bit samples
+- 1-4 channels

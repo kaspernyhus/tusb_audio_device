@@ -1,9 +1,6 @@
 [submodule "components/esp_tinyusb_audio"]
 	path = components/esp_tinyusb_audio
 	url = git@github.com:kaspernyhus/esp_tinyusb_audio.git
-[submodule "components/esp32_testing"]
-	path = components/esp32_testing
-	url = git@github.com:kaspernyhus/esp32_testing.git
 [submodule "components/esp_signal_generator"]
 	path = components/esp_signal_generator
 	url = git@github.com:kaspernyhus/esp_signal_generator.git
