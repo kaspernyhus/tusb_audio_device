@@ -36,7 +36,6 @@ void app_main(void)
     tusb_audio_init();
 #endif
 
-
 #if CONFIG_ESP_TINYUSB_NET_ENABLED
     tusb_net_init();
 #endif
@@ -78,7 +77,7 @@ bool tud_audio_tx_done_post_load_cb(uint8_t rhport, uint16_t n_bytes_copied, uin
     (void)ep_in;
     (void)cur_alt_setting;
 
-    esp_sig_gen_fill(&sig_gen, audio_data,CFG_TUD_AUDIO_EP_SZ_IN, 48*2);
+    esp_sig_gen_fill(&sig_gen, audio_data, CFG_TUD_AUDIO_EP_SZ_IN, 48 * 2);
 
     return true;
 }
